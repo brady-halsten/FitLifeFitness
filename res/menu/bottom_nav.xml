@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Dashboard"
+        android:id="@+id/dashboard"
+        android:icon="@drawable/baseline_analytics_24"/>
+    <item
+        android:title="Workout"
+        android:id="@+id/workout"
+        android:icon="@drawable/baseline_fitness_center_24"/>
+    <item
+        android:title="Food"
+        android:id="@+id/food"
+        android:icon="@drawable/baseline_dining_24"/>
+    <item
+        android:title="Profile"
+        android:id="@+id/profile"
+        android:icon="@drawable/baseline_emoji_people_24"/>
+
+</menu>

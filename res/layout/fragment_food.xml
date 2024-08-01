@@ -1,0 +1,403 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/foodFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fragment.FoodFragment">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/previousDayImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_arrow_circle_left_24"
+                    android:contentDescription="Previous Day"
+                    android:padding="8dp"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/foodLogTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Food Log"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:id="@+id/nextDayImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_arrow_circle_right_24"
+                    android:contentDescription="Next Day"
+                    android:padding="8dp"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+            <!-- Display date -->
+            <TextView
+                android:id="@+id/foodLogDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Today's Date"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="16dp" />
+
+            <!-- display totals of macronutrients -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/foodLogCalories"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="Calories"
+                        android:paddingBottom="2dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/foodLogProtein"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="Protein"
+                        android:paddingBottom="2dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/foodLogFat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="Fat"
+                        android:paddingBottom="2dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/foodLogCarb"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="Carb"
+                        android:paddingBottom="2dp"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:id="@+id/foodLogTotalCalories"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:paddingBottom="2dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/foodLogTotalProtein"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:paddingBottom="2dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/foodLogTotalFat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:paddingBottom="2dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/foodLogTotalCarb"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:paddingBottom="2dp"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- Breakfast Section -->
+            <TextView
+                android:id="@+id/breakfastTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Breakfast"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/breakfastItemEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter breakfast item"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/breakfastCaloriesEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Calories"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/breakfastProteinEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Protein"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/breakfastFatEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fat"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/breakfastCarbsEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Carbs"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/addBreakfastButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add to Log"
+                android:layout_marginTop="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/breakfastRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="1dp" />
+
+            <!-- Lunch Section -->
+            <TextView
+                android:id="@+id/lunchTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lunch"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/lunchItemEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter lunch item"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/lunchCaloriesEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Calories"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/lunchProteinEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Protein"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/lunchFatEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fat"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/lunchCarbsEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Carbs"
+                android:inputType="number" />
+            <Button
+                android:id="@+id/addLunchButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add to Log"
+                android:layout_marginTop="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lunchRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="1dp" />
+
+            <!-- Dinner Section -->
+            <TextView
+                android:id="@+id/dinnerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dinner"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/dinnerItemEditText"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Enter dinner item"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/dinnerCaloriesEditText"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Calories"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/dinnerProteinEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Protein"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/dinnerFatEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fat"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/dinnerCarbsEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Carbs"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/addDinnerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add to Log"
+                android:layout_marginTop="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dinnerRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="1dp" />
+
+            <!-- Snacks Section -->
+            <TextView
+                android:id="@+id/snacksTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Snacks"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/snackItemEditText"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Enter snack item"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/snackCaloriesEditText"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Calories"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/snackProteinEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Protein"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/snackFatEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fat"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/snackCarbsEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Carbs"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/addSnacksButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add to Log"
+                android:layout_marginTop="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/snackRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="1dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
